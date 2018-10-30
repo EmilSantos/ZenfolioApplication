@@ -68,9 +68,16 @@ namespace ZenfolioApplication
         return median;
       }
 
-
-
-
+      /*
+      Find the mode(s) by iterating through a sorted number list.
+       
+      A counter is kept in order to keep track of the largest frequency of a number.
+      
+      A dictionary is used to keep a frequency count for each number.
+      if any of the numbers' frequencies matches the largest count they will be added to the modeList
+      
+      This solution is multimodal.
+      */
       static string findMode(Double[] numbers)
       {
         int largest = 0;
@@ -109,13 +116,10 @@ namespace ZenfolioApplication
         return String.Join(", ", modeList);
     }
 
-
-
-
-
-
-
-
+    /*
+    *Although Hashtables run in O(1), a SortedDictionary is much easier to use so that we
+    *don't have to sort the letters.
+    */
     public static SortedDictionary<char, int> letterFrequency(String stringToCount)
     {
     	SortedDictionary<char, int> characterCount = new SortedDictionary<char, int>();
